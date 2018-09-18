@@ -127,3 +127,29 @@ for(let i=0; i<bondFilms.length; i++){
     }
 }
 
+// 7.
+const bondDollarTotal = [];
+for(let i=0; i<bondFilms.length; i++){
+    let grossHolder = "";
+    for(let j=0; j<bondFilms[i].gross.length; j++){
+        if(bondFilms[i].gross[j] !== "$" && bondFilms[i].gross[j] !== ","){
+            grossHolder += bondFilms[i].gross[j];
+        }
+    }
+    bondDollarTotal.push(grossHolder);
+
+    // const numberConverter = Number(bondFilms[i].gross);
+    // // console.log(numberConverter);
+    // bondDollarTotal += numberConverter;
+    // return sum;
+}
+// console.log(bondDollarTotal);
+
+// console.log(bondDollarTotal);
+
+let sum = 0;
+for(let i=0; i<bondDollarTotal.length; i++){
+    sum+=Number(bondDollarTotal[i]);
+}
+
+console.log(`All Bond films have grossed an all-time total of ${sum}.`);
